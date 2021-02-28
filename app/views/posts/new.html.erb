@@ -1,0 +1,21 @@
+<div class="col-md-8">
+  <form action="/posts/create" method="POST">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" name="post[title]" class="form-control" placeholder="Title">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Choose theme</label>
+      <select class="form-control" name="post[topic_id]">
+        <% @topics.each do |topic| %>
+          <option value="<%= topic.id%>"><%= topic.title %></option>
+        <% end %>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Text:</label>
+      <textarea name="post[body]" class="form-control" rows="10"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+</div>
