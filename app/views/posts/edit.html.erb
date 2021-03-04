@@ -1,5 +1,5 @@
 <div class="col-md-8">
-  <form action="/posts/update/<%= post.id%>" method="POST">
+  <form action="/posts/update/<%= @post.id%>" method="POST">
     <div class="form-group">
       <label for="title">Title</label>
       <input type="text" name="post[title]" value="<%= @post.title %>" class="form-control" placeholder="Title">

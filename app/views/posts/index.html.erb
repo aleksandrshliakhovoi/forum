@@ -3,7 +3,12 @@
   <!-- Blog Entries Column -->
   <div class="col-md-8">
 
-    <h1 class="my-4">All posts
+    <h1 class="my-4">
+      <% if @topic == nil %>
+      All posts
+      <%else %>
+      <%= @topic.title %>
+      <% end %>
     </h1>
 
     <% @posts.each do |post|%>
