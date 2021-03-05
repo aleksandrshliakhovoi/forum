@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   def topic
     #here used relation bound has_many
     @topic = Topic.find_by(alias: params[:topic])
-    @posts = Topic.posts
+    @posts = @topic.posts
     render 'index'
   end
 

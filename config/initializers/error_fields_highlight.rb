@@ -4,8 +4,9 @@ ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
 
   class_pos = html_tag.index 'class="'
   if class_pos
-    html_tag.insert class_pos + 7, "#{css_class} " 
+      html_tag.insert class_pos + 7, "#{css_class} "
   else
-    html_tag.insert(html_tag.index(">"), " class=#{css_class}")
-  end
+      # <label class="dddd" ></label>
+      html_tag.insert(html_tag.index(">"), " class=#{css_class}")
+  end   
 end
